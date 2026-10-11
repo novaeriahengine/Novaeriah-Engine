@@ -92,7 +92,8 @@ function ruin(x, z, rotation = 0) {
 }
 function landmarkWorld() {
   for (let x = -160; x < 180; x += 18) for (let z = -160; z < 180; z += 18) {
-    if (Math.hypot(x, z) < 155 && Math.random() > .55 && Math.hypot(x + 16, z - 28) > 35) tree(x + Math.random() * 8, z + Math.random() * 8);
+    // Keep the opening view clear of foliage so a fresh spawn always has a readable horizon.
+    if (Math.hypot(x, z) < 155 && Math.hypot(x, z) > 34 && Math.random() > .55 && Math.hypot(x + 16, z - 28) > 35) tree(x + Math.random() * 8, z + Math.random() * 8);
   }
   for (let i = 0; i < 12; i++) tree(-30 + Math.random() * 55, 15 + Math.random() * 44, true);
   ruin(-12, 21, .3); ruin(8, 34, -.5); ruin(-27, 39, .1);
