@@ -1,0 +1,35 @@
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; overflow: hidden; background: #050a0f; color: #eaf4ee; }
+button { font: inherit; color: inherit; cursor: pointer; }
+#game-shell, #game { width: 100vw; height: 100vh; display: block; }
+#game { position: fixed; inset: 0; outline: none; }
+.hud { position: fixed; inset: 0; pointer-events: none; }
+.panel { background: linear-gradient(135deg, rgb(4 13 21 / .88), rgb(10 25 33 / .64)); border: 1px solid rgb(174 224 212 / .19); box-shadow: 0 18px 45px rgb(0 0 0 / .2), inset 0 1px rgb(255 255 255 / .05); backdrop-filter: blur(7px); }
+.brand-panel { position: absolute; top: 25px; left: 28px; padding: 13px 17px; width: min(440px, calc(100vw - 56px)); border-left: 3px solid #d6ae61; }
+.eyebrow { color: #d6ae61; letter-spacing: .14em; font-size: .63rem; font-weight: 800; }
+h1 { margin: 3px 0 2px; letter-spacing: .02em; font-family: Georgia, serif; font-size: 1.52rem; }
+.brand-panel p { margin: 0; color: #b7cdc5; font-size: .78rem; line-height: 1.45; }
+.vitals { position: absolute; left: 28px; bottom: 26px; width: 250px; padding: 13px 15px; }
+.vital-label { display: flex; justify-content: space-between; margin: 3px 0 5px; color: #d7e5de; font-size: .72rem; }
+.vital-label strong { font-size: .67rem; color: #fff; }
+.meter { overflow: hidden; height: 6px; border-radius: 9px; background: #142630; }
+.meter i { display: block; height: 100%; width: 100%; transition: width .15s ease; }
+.health i { background: linear-gradient(90deg, #9f3341, #f27a63); }.ki i { background: linear-gradient(90deg, #317b8b, #68d9e8); }
+.stance { display: flex; align-items: center; gap: 7px; margin-top: 11px; color: #99b6ab; font-size: .67rem; }
+#stance-dot { width: 7px; height: 7px; border-radius: 50%; background: #d6ae61; box-shadow: 0 0 9px #d6ae61; }
+.minimap { position: absolute; right: 28px; top: 25px; padding: 8px; text-align: center; color: #b9cfca; font-size: .61rem; letter-spacing: .11em; }
+#map { display: block; width: 150px; height: 150px; margin-bottom: 5px; border: 1px solid #36525b; border-radius: 50%; background: #06111b; }
+.prompt { position: absolute; left: 50%; top: 62%; transform: translateX(-50%); padding: 10px 17px; border: 1px solid rgb(234 244 238 / .22); background: rgb(4 11 15 / .8); border-radius: 4px; font-size: .82rem; }
+.combat-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); padding: 8px 13px; color: #c9d8d2; border-radius: 4px; background: rgb(3 10 15 / .5); font-size: .68rem; white-space: nowrap; }
+kbd { padding: 1px 5px; border: 1px solid #668178; border-radius: 3px; color: #f5d69e; background: #102129; font-size: .72rem; }
+.screen-panel { position: fixed; z-index: 5; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(510px, calc(100vw - 35px)); padding: 38px; text-align: center; background: linear-gradient(135deg, rgb(6 17 25 / .95), rgb(12 31 36 / .93)); border: 1px solid rgb(214 174 97 / .45); box-shadow: 0 25px 100px #000; }
+.screen-panel .crest { font-size: 2.6rem; color: #d6ae61; text-shadow: 0 0 25px #d6ae61; }.screen-panel h2 { margin: 7px 0 12px; font: 2.25rem Georgia, serif; }.screen-panel p { color: #bcd0ca; line-height: 1.6; font-size: .88rem; }
+.primary { margin: 17px 0 22px; padding: 11px 26px; border: 1px solid #e5c477; color: #1a1610; background: linear-gradient(135deg, #f4d889, #b78942); font-weight: 800; letter-spacing: .04em; }.primary:hover { filter: brightness(1.12); }
+.start-controls { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px 17px; color: #91aaa2; font-size: .68rem; }.start-controls b { color: #e8d2a0; }
+.menu { position: fixed; z-index: 4; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(700px, calc(100vw - 34px)); min-height: 380px; background: #08141cee; border: 1px solid #58726b; box-shadow: 0 20px 90px #000; pointer-events: auto; }.menu-tabs { display: flex; border-bottom: 1px solid #29444a; }.menu-tabs button { padding: 15px 19px; background: transparent; border: 0; color: #92aaa4; font-size: .8rem; }.menu-tabs button.active { color: #f0d492; border-bottom: 2px solid #d6ae61; background: #10232a; }.menu-content { padding: 25px 28px; color: #bed0ca; }.menu-content h3 { margin: 0 0 14px; color: #ead4a2; font: 1.35rem Georgia, serif; }.stat-row { display: flex; align-items: center; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #203b40; font-size: .82rem; }.skill-card { margin: 9px 0; padding: 11px; border-left: 2px solid #4e9fac; background: #0d2229; font-size: .8rem; }.skill-card b { color: #f2d799; }.menu-footer { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; color: #68847d; font-size: .69rem; }
+.dialogue { position: fixed; z-index: 6; bottom: 9%; left: 50%; transform: translateX(-50%); width: min(640px, calc(100vw - 40px)); padding: 20px 23px; background: #08151deF; border: 1px solid #a88950; box-shadow: 0 17px 70px #000; pointer-events: auto; }.dialogue-name { color: #efd79d; font: 1.25rem Georgia, serif; }.dialogue p { margin: 8px 0 15px; color: #c4d5d0; line-height: 1.5; }.dialogue button { padding: 6px 14px; border: 1px solid #668178; background: #173038; font-size: .75rem; }
+.reticle { position: fixed; z-index: 2; top: 50%; left: 50%; width: 12px; height: 12px; transform: translate(-50%, -50%); border: 1px solid rgb(232 246 236 / .7); border-radius: 50%; box-shadow: 0 0 6px #000; }.reticle::before,.reticle::after { content:""; position: absolute; background: rgb(232 246 236 / .7); }.reticle::before { width: 1px; height: 18px; left: 5px; top: -4px; }.reticle::after { height: 1px; width: 18px; top: 5px; left: -4px; }
+.toast { position: absolute; top: 21%; left: 50%; transform: translateX(-50%); padding: 10px 17px; color: #f3dea8; border: 1px solid #856d43; background: #152026eF; font-size: .77rem; transition: opacity .2s; }.hidden { display: none !important; }
+.damage { position: fixed; z-index: 8; color: #ffd584; font: 800 1.2rem Georgia, serif; text-shadow: 0 2px 5px #000; pointer-events: none; animation: floatDamage .8s forwards; } .damage.enemy { color: #ff8874; } @keyframes floatDamage { to { transform: translateY(-43px); opacity: 0; } }
+@media (max-width: 670px) { .brand-panel { top: 12px; left: 12px; width: calc(100vw - 24px); }.minimap { display:none; }.vitals { left: 12px; bottom: 10px; }.combat-hint { bottom: 10px; left: auto; right: 10px; transform: none; max-width: 44%; white-space: normal; }.screen-panel { padding: 27px 22px; }.reticle { display:none; } }

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07101b" />
+    <meta name="description" content="Novaeriah — a playable martial arts RPG engine prototype." />
+    <title>Novaeriah Engine — Ashen Isle</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="game-shell">
+      <canvas id="game" aria-label="Novaeriah game view"></canvas>
+
+      <div id="hud" class="hud" aria-live="polite">
+        <section class="brand-panel panel">
+          <div class="eyebrow">NOVAERIAH ENGINE · WEB PROTOTYPE</div>
+          <h1>Ashen Isle</h1>
+          <p id="objective">The mainland warships are approaching. Find survivors and defend the village.</p>
+        </section>
+
+        <section class="vitals panel">
+          <div class="vital-label"><span>Health</span><strong id="health-text">100 / 100</strong></div>
+          <div class="meter health"><i id="health-bar"></i></div>
+          <div class="vital-label"><span>Ki</span><strong id="ki-text">100 / 100</strong></div>
+          <div class="meter ki"><i id="ki-bar"></i></div>
+          <div class="stance"><span id="stance-dot"></span><span id="stance-text">Wandering · Double-tap W to sprint</span></div>
+        </section>
+
+        <section class="minimap panel">
+          <canvas id="map" width="180" height="180" aria-label="Island map"></canvas>
+          <span>ASHEN ISLE</span>
+        </section>
+
+        <section id="prompt" class="prompt hidden">Press <kbd>E</kbd> to speak</section>
+        <section id="combat-hint" class="combat-hint">LMB: punch &nbsp; <kbd>Z</kbd> Palm Strike &nbsp; <kbd>X</kbd> Sky Step &nbsp; <kbd>C</kbd> Guard Break</section>
+        <section id="toast" class="toast hidden"></section>
+        <section id="damage-layer" aria-hidden="true"></section>
+      </div>
+
+      <aside id="start-screen" class="screen-panel">
+        <div class="crest">✦</div>
+        <div class="eyebrow">NOVAERIAH ENGINE</div>
+        <h2>Awaken on Ashen Isle</h2>
+        <p>A browser-first vertical slice for a martial-arts RPG. Explore the burned village, talk to the survivors, and meet the first raiding party.</p>
+        <button id="play-button" class="primary">Enter the World</button>
+        <div class="start-controls">
+          <span><b>WASD</b> move</span><span><b>Mouse</b> look</span><span><b>Double W</b> sprint</span><span><b>Shift</b> channel Ki</span>
+        </div>
+      </aside>
+
+      <aside id="menu" class="menu hidden" aria-label="Character menu">
+        <div class="menu-tabs" role="tablist">
+          <button data-tab="inventory" class="active">Inventory</button>
+          <button data-tab="stats">Stats</button>
+          <button data-tab="skills">Skills</button>
+          <button data-tab="map">Map</button>
+        </div>
+        <div id="menu-content" class="menu-content"></div>
+        <div class="menu-footer">Press <kbd>M</kbd> to close</div>
+      </aside>
+
+      <aside id="dialogue" class="dialogue hidden">
+        <div class="dialogue-name" id="dialogue-name">Survivor</div>
+        <p id="dialogue-text"></p>
+        <button id="dialogue-close">Continue</button>
+      </aside>
+
+      <div id="reticle" class="reticle" aria-hidden="true"></div>
+    </div>
+    <noscript>This prototype needs JavaScript enabled to run.</noscript>
+    <script type="module" src="./engine.js"></script>
+  </body>
+</html>
